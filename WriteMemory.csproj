@@ -45,8 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="gamesHashes\LEGOStarWarsSaga.json" />
-    <None Include="gamesHashes\TheBindingOfIsaacRebirth.json" />
     <Content Include="samplescript.exo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
