@@ -1,11 +1,10 @@
 ﻿#? 0x12BBE168 <= 0 : 0x12BBE168 = 1
+
 0x1595F538.Process = isaac-ng
-0x1595F538.Constant = false
-0x1595F538.Increment = true
-0x1595F538.IncrementRate = 1
-0x1595F538.IncrementTime = 500
+0x1595F538.Constant = true
+0x1595F538.ConstantValue = 11
+
 0x1595F534.Process = isaac-ng
-0x1595F534.Constant = false
 0x1595F534.Increment = true
 0x1595F534.IncrementRate = 1
 0x1595F534.IncrementTime = 500

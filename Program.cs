@@ -96,6 +96,11 @@ namespace WriteMemory
                             WriteMem(process[i], address[i], int.Parse(previous.ToString()) + eprocesses[i].IncrementRate);
                             Thread.Sleep(eprocesses[i].IncrementTime);
                         }
+                        else if (eprocesses[i].Constant)
+                        {
+                            WriteMem(process[i], address[i], eprocesses[i].ConstantValue);
+                            Thread.Sleep(350);
+                        }
                     }
                 }
             }
