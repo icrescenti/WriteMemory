@@ -1,0 +1,10 @@
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\bin\Debug\WriteMemory.exe
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\bin\Debug\WriteMemory.pdb
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\obj\Debug\WriteMemory.csprojAssemblyReference.cache
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\obj\Debug\WriteMemory.csproj.CoreCompileInputs.cache
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\obj\Debug\WriteMemory.exe
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\obj\Debug\WriteMemory.pdb
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\bin\Debug\ExoInterpreter.dll
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\bin\Debug\ExoInterpreter.pdb
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\obj\Debug\WriteMemory.csproj.CopyComplete
+D:\WORKSHOP\Professional\WriteMemory\WriteMemory\bin\Debug\samplescript.exo
