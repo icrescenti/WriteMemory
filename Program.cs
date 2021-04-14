@@ -46,7 +46,11 @@ namespace WriteMemory
 
         static void Main(string[] args)
         {
-            ExoInterpreter.WriteMemory.EProcess[] eprocesses = ExoInterpreter.WriteMemory.Run(File.ReadAllText("samplescript.exo"));
+            ExoInterpreter.WriteMemory.EProcess[] eprocesses = null;
+            if (args.Length > 0)
+            {
+                eprocesses = ExoInterpreter.WriteMemory.Run(File.ReadAllText(args[0]));
+            }
             long[] address = new long[0];
             Process[] process = new Process[0];
 
@@ -57,6 +61,8 @@ namespace WriteMemory
                 eprocesses[0].Name = Console.ReadLine();
                 Console.Write("Address: ");
                 eprocesses[0].Address = Console.ReadLine();
+                Console.Write("Is value constant? (true/false): ");
+                eprocesses[0].Constant = bool.Parse(Console.ReadLine());
             }
 
             Array.Resize(ref address, eprocesses.Length);
@@ -128,6 +134,53 @@ namespace WriteMemory
             CloseHandle(hProc);
 
             return buffer;
+        }
+    
+        //(PROTOTYPE) TO BE IMPROVED
+        static long[] searchAddressByValue(Process p, int value, long[] addresses = null, long lastAddress = 3200000)
+        {
+            long[] newAddresses = new long[0];
+            long[] finalAddresses = new long[0];
+
+            #region search addresses with value
+            for (long i = 0, j = 0; i < lastAddress; i++)
+            {
+                int valor = ReadMem(p, 0x00000000 + i)[0];
+                if (valor == value)
+                {
+                    Array.Resize(ref newAddresses, newAddresses.Length + 1);
+                    newAddresses[j] = 0x00000000 + i;
+                    j++;
+                    Console.WriteLine("Value found at: " + (0x00000000 + i) + " = " + valor);
+                }
+            }
+            #endregion
+
+            #region if there are old addresses and whe are looking for a change, finalAddresses will be defined with the matching ones
+            int x = 0;
+            foreach (long oldAddress in addresses)
+            {
+                foreach (long newAddress in newAddresses)
+                {
+                    if (oldAddress == newAddress)
+                    {
+                        Array.Resize(ref finalAddresses, finalAddresses.Length + 1);
+                        finalAddresses[x] = newAddress;
+                        x++;
+                    }
+                }
+            }
+            #endregion
+
+            #region firscan defgine finalAddresses
+            if (finalAddresses.Length <= 0)
+            {
+                finalAddresses = newAddresses;
+                newAddresses = null;
+            }
+            #endregion
+
+            return finalAddresses;
         }
     }
 }
